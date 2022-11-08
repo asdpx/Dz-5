@@ -76,7 +76,6 @@ class ViewController: UIViewController {
     }
     @objc private func contactButtonTapped () {
         let contactViewController = ContactViewController()
-        navigationController?.pushViewController(contactViewController, animated: true)
         if let email = loginTf.text, let password = passwordTf.text {
             if email == "" && password == "" {
                 UtilityFunction().simpleAllert(vc: self, title: "Alert!", messege: "Enter email and password")
@@ -86,7 +85,7 @@ class ViewController: UIViewController {
                 } else if !password.isValidPassword(password: password) {
                     UtilityFunction().simpleAllert(vc: self, title: "Alert!", messege: "Enter valid password")
                 }else{
-                   navigationController?.pushViewController(contactViewController, animated: true)
+                    navigationController?.pushViewController(contactViewController, animated: true)
                 }
 
             }
