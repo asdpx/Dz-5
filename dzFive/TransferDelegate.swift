@@ -7,5 +7,5 @@
 
 import UIKit
 protocol TransferDelegate {
-    func update (name: String)
+    func update (name: String, birthday: String)
 }

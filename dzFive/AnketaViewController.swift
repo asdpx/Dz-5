@@ -47,10 +47,17 @@ class AnketaViewController: UIViewController {
     }
     
     @objc func doneButtonTuch() {
-        if let name = nameTextField.text {
-            delegate?.update(name: name)
+        if let name = nameTextField.text, let birthday = dataTextField.text{
+            delegate?.update(name: name, birthday: birthday)
         }
         dismiss(animated: true)
+    }
+    @objc func donePress() {
+        let dateFormater = DateFormatter()
+        dateFormater.dateStyle = .medium
+        dateFormater.timeStyle = .none
+        self.dataTextField.text = dateFormater.string(from: birthdayPicker.date)
+        self.view.endEditing(true)
     }
     func setupSetting() {
         [nameTextField, dataTextField, doneButton].forEach { view.addSubview($0) }
@@ -80,11 +87,5 @@ class AnketaViewController: UIViewController {
         birthdayPicker.preferredDatePickerStyle = .wheels
         birthdayPicker.datePickerMode = .date
     }
-    @objc func donePress() {
-        let dateFormater = DateFormatter()
-        dateFormater.dateStyle = .medium
-        dateFormater.timeStyle = .none
-        self.dataTextField.text = dateFormater.string(from: birthdayPicker.date)
-        self.view.endEditing(true)
-    }
+
 }

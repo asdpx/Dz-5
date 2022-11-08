@@ -12,7 +12,6 @@ class ContactViewController: UIViewController {
     lazy var peopleLabel: UILabel = {
         let label = UILabel()
         label.text = ""
-
         label.font = UIFont(name: "Marker Felt Thin", size: 25)
         label.numberOfLines = 3
         label.textColor = UIColor.red
@@ -53,7 +52,7 @@ class ContactViewController: UIViewController {
 }
 
 extension ContactViewController: TransferDelegate {
-    func update(name: String) {
-        peopleLabel.text = "name is \(name)"
+    func update(name: String, birthday: String) {
+        peopleLabel.text = "name is \(name) birthday \(birthday)"
     }
 }
