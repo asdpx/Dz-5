@@ -14,6 +14,7 @@ class AnketaViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .roundedRect
         textField.placeholder = "Add email"
+        textField.textAlignment = .center
         return textField
     }()
 
