@@ -76,24 +76,24 @@ class ViewController: UIViewController {
     }
     @objc private func contactButtonTapped () {
         let contactViewController = ContactViewController()
-      //  navigationController?.pushViewController(contactViewController, animated: true)
+        navigationController?.pushViewController(contactViewController, animated: true)
         if let email = loginTf.text, let password = passwordTf.text {
-//            if email == "" && password == "" {
-//                UtilityFunction().simpleAllert(vc: self, title: "Alert!", messege: "Enter email and password")
-//            } else {
-//                if !email.isValidEmail(email: email) {
-//                    UtilityFunction().simpleAllert(vc: self, title: "Alert!", messege: "Enter valid email")
-//                } else if !password.isValidPassword(password: password) {
-//                    UtilityFunction().simpleAllert(vc: self, title: "Alert!", messege: "Enter valid password")
-//                }else{
+            if email == "" && password == "" {
+                UtilityFunction().simpleAllert(vc: self, title: "Alert!", messege: "Enter email and password")
+            } else {
+                if !email.isValidEmail(email: email) {
+                    UtilityFunction().simpleAllert(vc: self, title: "Alert!", messege: "Enter valid email")
+                } else if !password.isValidPassword(password: password) {
+                    UtilityFunction().simpleAllert(vc: self, title: "Alert!", messege: "Enter valid password")
+                }else{
                    navigationController?.pushViewController(contactViewController, animated: true)
                 }
 
             }
         }
-//    }
-//
-//}
+    }
+
+}
 
 extension ViewController: UITextFieldDelegate {
 
